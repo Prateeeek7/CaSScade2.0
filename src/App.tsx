@@ -31,10 +31,9 @@ export default function App() {
             className="text-center mb-12"
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-orbitron font-black mb-4 glitch-text px-4"
+              className="title-hero mb-4 glitch-text px-4"
               style={{ 
                 textShadow: '0 0 20px #0076C0, 0 0 40px #0076C0, 0 0 60px #0076C0',
-                fontFamily: 'Orbitron, monospace',
                 willChange: 'text-shadow',
                 transform: 'translateZ(0)'
               }}
@@ -69,34 +68,44 @@ export default function App() {
                 y: 0, 
                 scale: 1,
                 textShadow: [
-                  '0 0 20px #F59E0B, 0 0 40px #F59E0B, 0 0 60px #F59E0B',
-                  '0 0 30px #F59E0B, 0 0 60px #F59E0B, 0 0 90px #F59E0B, 0 0 120px #F59E0B',
-                  '0 0 20px #F59E0B, 0 0 40px #F59E0B, 0 0 60px #F59E0B'
+                  '0 0 10px #F59E0B',
+                  '0 0 20px #F59E0B',
+                  '0 0 30px #F59E0B'
                 ]
               }}
-              transition={{ 
-                duration: 1.5, 
-                delay: 0.2,
-                textShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-              }}
-              whileHover={{
+              transition={{ duration: 0.8, delay: 0.3 }}
+              whileHover={{ 
                 scale: 1.1,
                 rotate: [0, -2, 2, 0],
-                textShadow: '0 0 40px #F59E0B, 0 0 80px #F59E0B, 0 0 120px #F59E0B, 0 0 160px #F59E0B'
+                textShadow: [
+                  '0 0 20px #F59E0B',
+                  '0 0 40px #F59E0B',
+                  '0 0 60px #F59E0B'
+                ]
               }}
               whileTap={{ scale: 0.95 }}
-              style={{ willChange: 'transform, text-shadow' }}
             >
-              <span className="inline-block transform -skew-x-6 mr-2">DIVS</span>
-              <span className="inline-block transform skew-x-6 mr-2">GONE</span>
-              <span className="inline-block transform -skew-x-6">WILD</span>
+              <span className="transform -skew-x-12 inline-block">D</span>
+              <span className="transform skew-x-12 inline-block">I</span>
+              <span className="transform -skew-x-12 inline-block">V</span>
+              <span className="transform skew-x-12 inline-block">S</span>
+              <span className="transform -skew-x-12 inline-block"> </span>
+              <span className="transform skew-x-12 inline-block">G</span>
+              <span className="transform -skew-x-12 inline-block">O</span>
+              <span className="transform -skew-x-12 inline-block">N</span>
+              <span className="transform skew-x-12 inline-block">E</span>
+              <span className="transform -skew-x-12 inline-block"> </span>
+              <span className="transform skew-x-12 inline-block">W</span>
+              <span className="transform -skew-x-12 inline-block">I</span>
+              <span className="transform -skew-x-12 inline-block">L</span>
+              <span className="transform skew-x-12 inline-block">D</span>
             </motion.h2>
             
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl font-space-grotesk text-blue-400 mb-8"
+              className="text-emphasis text-blue-400 mb-8"
               style={{
                 textShadow: '0 0 10px #0076C0'
               }}
@@ -118,7 +127,7 @@ export default function App() {
               href="https://WWW.EventLinkDedoBhaiyaJi.com"     //Gravitas Event Link
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-900 text-white font-space-grotesk font-bold text-sm sm:text-base rounded-full relative overflow-hidden group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-900 text-white font-secondary font-bold text-body rounded-full relative overflow-hidden group"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(0, 118, 192, 0.8), 0 0 60px rgba(0, 118, 192, 0.4)'
@@ -168,7 +177,7 @@ export default function App() {
               transition={{ duration: 3, repeat: Infinity }}
             >
               <motion.h2 
-                className="text-2xl sm:text-3xl md:text-4xl font-space-grotesk font-bold text-orange-400 mb-4"
+                className="title-heading text-orange-400 mb-4"
                 style={{
                   textShadow: '0 0 15px #EA4B21'
                 }}
@@ -176,7 +185,7 @@ export default function App() {
                 [SYSTEM NOTICE]
               </motion.h2>
               <motion.p 
-                className="text-base sm:text-lg md:text-xl font-space-grotesk text-orange-300"
+                className="text-content text-orange-300"
                 style={{
                   textShadow: '0 0 10px #EA4B21'
                 }}
@@ -200,7 +209,7 @@ export default function App() {
             >
               <div>
                 <motion.h3 
-                  className="text-2xl sm:text-3xl md:text-4xl font-space-grotesk font-bold text-blue-400 mb-4 sm:mb-6"
+                  className="title-heading text-blue-400 mb-4 sm:mb-6"
                   style={{
                     textShadow: '0 0 15px #0076C0'
                   }}
@@ -263,7 +272,7 @@ export default function App() {
                   }}
                   transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <div className="font-space-grotesk text-sm">
+                  <div className="text-caption">
                     <div className="text-green-400 mb-2">$ cascade-init --chaos-mode</div>
                     <div className="text-yellow-400 mb-2">Loading glitch protocols...</div>
                     <div className="text-purple-400 mb-2">Initializing absurdity matrix...</div>
@@ -304,7 +313,7 @@ export default function App() {
                   }}
                   transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <div className="font-space-grotesk text-sm">
+                  <div className="text-caption">
                     <div className="text-green-400 mb-2">$ chaos-engine --activate</div>
                     <div className="text-yellow-400 mb-2">Breaking conventional rules...</div>
                     <div className="text-blue-400 mb-2">Loading creative protocols...</div>
@@ -321,7 +330,7 @@ export default function App() {
               </div>
               <div className="order-1 md:order-2">
                 <motion.h3 
-                  className="text-4xl font-space-grotesk font-bold text-orange-400 mb-6"
+                  className="title-heading text-orange-400 mb-6"
                   style={{
                     textShadow: '0 0 15px #EA4B21'
                   }}
@@ -329,7 +338,7 @@ export default function App() {
                   Why Participate?
                 </motion.h3>
                 <motion.div 
-                  className="space-y-4 text-lg font-space-grotesk text-gray-300"
+                  className="space-y-4 text-content text-gray-300"
                   style={{
                     textShadow: '0 0 5px rgba(255, 255, 255, 0.3)'
                   }}
@@ -390,7 +399,7 @@ export default function App() {
             >
               <div>
                 <motion.h3 
-                  className="text-4xl font-space-grotesk font-bold text-purple-400 mb-6"
+                  className="title-heading text-purple-400 mb-6"
                   style={{
                     textShadow: '0 0 15px #8B5CF6'
                   }}
@@ -439,7 +448,7 @@ export default function App() {
                   }}
                   transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <div className="font-space-grotesk text-sm">
+                  <div className="text-caption">
                     <div className="text-green-400 mb-2">$ matrix-break --initiate</div>
                     <div className="text-yellow-400 mb-2">Scanning for chaos potential...</div>
                     <div className="text-purple-400 mb-2">Loading glitch protocols...</div>
@@ -467,7 +476,7 @@ export default function App() {
         >
           <div className="max-w-4xl mx-auto">
             <motion.h3 
-              className="text-4xl font-space-grotesk font-bold text-center text-blue-400 mb-12"
+                                className="title-heading text-center text-blue-400 mb-12"
               style={{
                 textShadow: '0 0 15px #0076C0'
               }}
@@ -492,7 +501,7 @@ export default function App() {
                     scale: 1.02,
                     textShadow: '0 0 15px #0076C0'
                   }}
-                  className="border border-gray-600 p-4 rounded-lg bg-black/40 backdrop-blur-sm font-space-grotesk text-lg cursor-pointer"
+                  className="border border-gray-600 p-4 rounded-lg bg-black/40 backdrop-blur-sm text-content cursor-pointer"
                   style={{
                     borderImage: 'linear-gradient(45deg, #0076C0, transparent, #0076C0) 1'
                   }}
@@ -537,7 +546,7 @@ export default function App() {
                   </motion.div>
                   <div>
                     <motion.h3 
-                      className="text-4xl font-space-grotesk font-bold text-blue-400"
+                      className="title-heading text-blue-400"
                       style={{
                         textShadow: '0 0 15px #0076C0'
                       }}
@@ -545,7 +554,7 @@ export default function App() {
                       About CSI Chapter
                     </motion.h3>
                     <motion.p 
-                      className="text-xl font-space-grotesk text-orange-400 font-bold"
+                      className="text-emphasis text-orange-400"
                       style={{
                         textShadow: '0 0 10px #EA4B21'
                       }}
@@ -609,7 +618,7 @@ export default function App() {
                     href="https://www.linkedin.com/company/csivitu/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-orange-600 text-white font-space-grotesk font-bold rounded-full relative overflow-hidden group"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-orange-600 text-white font-secondary font-bold rounded-full relative overflow-hidden group"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: '0 0 30px rgba(0, 118, 192, 0.6), 0 0 60px rgba(234, 75, 33, 0.6)'
@@ -650,7 +659,7 @@ export default function App() {
                   }}
                   transition={{ duration: 6, repeat: Infinity }}
                 >
-                  <div className="font-space-grotesk text-sm">
+                  <div className="text-caption">
                     <div className="text-green-400 mb-2">$ csi-vit --status</div>
                     <div className="text-yellow-400 mb-2">Loading community modules...</div>
                     <div className="text-blue-400 mb-2">Connecting to CSI network...</div>
@@ -683,7 +692,7 @@ export default function App() {
             {/* Main Footer Content */}
             <div className="text-center mb-12">
               <motion.div 
-                className="font-space-grotesk text-lg text-gray-400 mb-6"
+                                  className="text-content text-gray-400 mb-6"
                 animate={{
                   textShadow: [
                     '0 0 5px rgba(255, 255, 255, 0.2)',
@@ -696,7 +705,7 @@ export default function App() {
                 [END_TRANSMISSION]
               </motion.div>
               <motion.p 
-                className="text-blue-400 text-xl font-space-grotesk mb-8"
+                                  className="text-blue-400 text-emphasis mb-8"
                 style={{
                   textShadow: '0 0 10px #0076C0'
                 }}
@@ -805,7 +814,7 @@ export default function App() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <p className="text-gray-500 font-space-grotesk text-sm">
+              <p className="text-gray-500 text-caption">
                 © 2025 CaSScade'25. Powered by CSI VIT. All rights reserved.
               </p>
             </motion.div>

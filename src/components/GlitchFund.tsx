@@ -151,7 +151,7 @@ export default function GlitchFund(): JSX.Element {
           </motion.h2>
           
           <motion.div
-            className="text-2xl md:text-3xl font-space-grotesk text-blue-400 mb-4"
+            className="title-subheading text-blue-400 mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -183,7 +183,7 @@ export default function GlitchFund(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          <h3 className="text-2xl font-space-grotesk font-bold text-yellow-400 mb-4">
+                      <h3 className="title-heading text-yellow-400 mb-4">
             Special Recognition
           </h3>
           <p className="text-lg text-yellow-300 mb-6">
