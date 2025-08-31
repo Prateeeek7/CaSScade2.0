@@ -42,7 +42,7 @@ export default function SystemBroadcast() {
     };
 
     // Start first line immediately, then continue with proper timing
-    const timer = setTimeout(() => {
+    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
       startTyping();
     }, visibleLines === 0 ? 50 : Math.random() * 80 + 40);
 

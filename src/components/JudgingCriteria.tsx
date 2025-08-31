@@ -37,7 +37,7 @@ const criteria = [
   }
 ];
 
-const TypewriterText = ({ text }) => {
+const TypewriterText = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const TypewriterText = ({ text }) => {
   return <p className="text-gray-300 text-sm text-center font-mono h-24">{displayedText}</p>;
 };
 
-const CriteriaCard = ({ criterion }) => {
+const CriteriaCard = ({ criterion }: { criterion: any }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

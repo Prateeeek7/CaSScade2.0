@@ -1,41 +1,53 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-export default function GridBackground() {
-  const canvasRef = useRef(null);
-  const starsRef = useRef([]);
-  const animationFrameRef = useRef();
+interface Star {
+  x: number;
+  y: number;
+  speed: number;
+  isHorizontal: boolean;
+  trail: Array<{ x: number; y: number; opacity: number }>;
+  opacity: number;
+}
+
+export default function GridBackground(): JSX.Element {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const starsRef = useRef<Star[]>([]);
+  const animationFrameRef = useRef<number>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
     
     // Performance optimizations for canvas
     ctx.imageSmoothingEnabled = false;
     ctx.imageSmoothingQuality = 'high';
     
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const resizeCanvas = (): void => {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     // Grid settings
-    const gridSize = 50;
-    const gridColor = '#0076C0';
+    const gridSize: number = 50;
+    const gridColor: string = '#0076C0';
 
     // Initialize shooting stars
-    const initStars = () => {
+    const initStars = (): void => {
       starsRef.current = [];
-      const numStars = 8;
+      const numStars: number = 8;
       
       for (let i = 0; i < numStars; i++) {
-        const isHorizontal = Math.random() > 0.5;
-        const star = {
+        const isHorizontal: boolean = Math.random() > 0.5;
+        const star: Star = {
           x: isHorizontal ? -20 : Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
           y: isHorizontal ? Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize : -20,
           speed: 4 + Math.random() * 4,
@@ -47,11 +59,13 @@ export default function GridBackground() {
       }
     };
 
-    const drawGrid = (time) => {
+    const drawGrid = (time: number): void => {
+      if (!ctx || !canvas) return;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw grid with pulsing effect
-      const pulseIntensity = 0.3 + 0.2 * Math.sin(time * 0.002);
+      const pulseIntensity: number = 0.3 + 0.2 * Math.sin(time * 0.002);
       ctx.strokeStyle = `rgba(0, 118, 192, ${pulseIntensity})`;
       ctx.lineWidth = 1;
       ctx.shadowBlur = 10;
@@ -74,7 +88,7 @@ export default function GridBackground() {
       }
 
       // Scan line effect
-      const scanY = (time * 0.2) % (canvas.height + 100);
+      const scanY: number = (time * 0.2) % (canvas.height + 100);
       ctx.strokeStyle = `rgba(0, 118, 192, 0.8)`;
       ctx.lineWidth = 2;
       ctx.shadowBlur = 20;
@@ -84,8 +98,10 @@ export default function GridBackground() {
       ctx.stroke();
     };
 
-    const updateStars = () => {
-      starsRef.current.forEach(star => {
+    const updateStars = (): void => {
+      if (!canvas) return;
+      
+      starsRef.current.forEach((star: Star) => {
         // Update position
         if (star.isHorizontal) {
           star.x += star.speed;
@@ -103,45 +119,44 @@ export default function GridBackground() {
 
         // Update trail
         star.trail.push({ x: star.x, y: star.y, opacity: star.opacity });
-        if (star.trail.length > 15) {
+        if (star.trail.length > 10) {
           star.trail.shift();
         }
       });
     };
 
-    const drawStars = () => {
-      starsRef.current.forEach(star => {
+    const drawStars = (): void => {
+      if (!ctx) return;
+      
+      starsRef.current.forEach((star: Star) => {
         // Draw trail
-        star.trail.forEach((point, index) => {
-          const trailOpacity = (index / star.trail.length) * point.opacity * 0.6;
-          const size = (index / star.trail.length) * 3;
-          
-          ctx.beginPath();
-          ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 255, ${trailOpacity})`;
+        star.trail.forEach((trailPoint, index) => {
+          const opacity = (index / star.trail.length) * star.opacity;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.lineWidth = 2;
           ctx.shadowBlur = 15;
-          ctx.shadowColor = '#0076C0';
-          ctx.fill();
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+          
+          if (index > 0) {
+            const prevPoint = star.trail[index - 1];
+            ctx.beginPath();
+            ctx.moveTo(prevPoint.x, prevPoint.y);
+            ctx.lineTo(trailPoint.x, trailPoint.y);
+            ctx.stroke();
+          }
         });
 
-        // Draw main star
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, 4, 0, Math.PI * 2);
+        // Draw star head
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
         ctx.shadowBlur = 20;
-        ctx.shadowColor = '#0076C0';
-        ctx.fill();
-
-        // Draw star aura
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
         ctx.beginPath();
-        ctx.arc(star.x, star.y, 8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 118, 192, ${star.opacity * 0.3})`;
-        ctx.shadowBlur = 25;
+        ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
         ctx.fill();
       });
     };
 
-    const animate = (time) => {
+    const animate = (time: number): void => {
       // Performance optimization: Only update if tab is visible
       if (document.hidden) {
         animationFrameRef.current = requestAnimationFrame(animate);
@@ -155,7 +170,7 @@ export default function GridBackground() {
     };
 
     initStars();
-    animate(0);
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
@@ -166,10 +181,12 @@ export default function GridBackground() {
   }, []);
 
   return (
-    <canvas
+    <motion.canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 118, 192, 0.03), transparent 70%)' }}
+      className="w-full h-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     />
   );
 }

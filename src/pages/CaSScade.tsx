@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import GridBackground from '../components/casscade/GridBackground';
-import SystemBroadcast from '../components/casscade/SystemBroadcast';
-import Timeline from '../components/casscade/Timeline';
-import JudgingCriteria from '../components/casscade/JudgingCriteria';
-import GlitchFund from '../components/casscade/GlitchFund';
+import GridBackground from '../components/GridBackground';
+import SystemBroadcast from '../components/SystemBroacast';
+import Timeline from '../components/Timeline';
+import JudgingCriteria from '../components/JudgingCriteria';
+import GlitchFund from '../components/GlitchFund';
 
 export default function CaSScade() {
   const { scrollYProgress } = useScroll();

@@ -764,7 +764,7 @@ export default function App() {
 
                 {/* GitHub */}
                 <motion.a
-                  href="https://github.com/csivitu"
+                  href="https://github.com/csivit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors duration-300"
