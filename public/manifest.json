@@ -1,0 +1,27 @@
+{
+  "name": "CaSScade'25 - DIVS GONE WILD",
+  "short_name": "CaSScade'25",
+  "description": "A design-first chaos experiment where HTML, CSS, and JS collide in the most absurd, over-engineered ways possible.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0076C0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}
