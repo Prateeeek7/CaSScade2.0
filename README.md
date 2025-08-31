@@ -126,16 +126,24 @@ CaSScade-25/
 ├── src/
 │   ├── App.tsx              # Main application component
 │   ├── main.tsx             # Application entry point
-│   └── index.css            # Global styles and animations
-├── Components/
-│   └── casscade/
-│       ├── GridBackground.jsx    # Animated grid background
-│       ├── SystemBroacast.jsx    # Typewriter system messages
-│       ├── Timeline.jsx          # Event timeline
-│       ├── JudgingCriteria.jsx   # Judging criteria cards
-│       └── GlitchFund.jsx        # Prize pool display
+│   ├── components/          # Reusable UI components
+│   │   ├── GridBackground.jsx    # Animated grid background
+│   │   ├── SystemBroacast.jsx    # Typewriter system messages
+│   │   ├── Timeline.jsx          # Event timeline
+│   │   ├── JudgingCriteria.jsx   # Judging criteria cards
+│   │   └── GlitchFund.jsx        # Prize pool display
+│   ├── pages/               # Page components
+│   │   └── CaSScade.jsx     # Original page structure
+│   ├── styles/              # Global styles and animations
+│   │   └── index.css        # Main CSS file with Tailwind and custom animations
+│   ├── assets/              # Static assets (images, icons, etc.)
+│   ├── utils/               # Utility functions and helpers
+│   └── types/               # TypeScript type definitions
 ├── public/
-│   └── CSI Logo.svg         # CSI chapter logo
+│   ├── index.html           # Main HTML file
+│   ├── images/              # Image assets
+│   │   └── CSI Logo.svg     # CSI chapter logo
+│   └── icons/               # Icon assets
 ├── dist/                    # Production build output
 └── package.json             # Project dependencies and scripts
 ```

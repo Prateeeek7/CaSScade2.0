@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import GridBackground from '../Components/casscade/GridBackground';
-import SystemBroadcast from '../Components/casscade/SystemBroacast';
-import Timeline from '../Components/casscade/Timeline';
-import JudgingCriteria from '../Components/casscade/JudgingCriteria';
-import GlitchFund from '../Components/casscade/GlitchFund';
+import GridBackground from './components/GridBackground';
+import SystemBroadcast from './components/SystemBroacast';
+import Timeline from './components/Timeline';
+import JudgingCriteria from './components/JudgingCriteria';
+import GlitchFund from './components/GlitchFund';
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -533,7 +533,7 @@ export default function App() {
                       scale: 1.05
                     }}
                   >
-                    <img src="/CSI Logo.svg" alt="CSI Logo" className="w-full h-full" />
+                    <img src="/images/CSI Logo.svg" alt="CSI Logo" className="w-full h-full" />
                   </motion.div>
                   <div>
                     <motion.h3 
@@ -764,7 +764,7 @@ export default function App() {
 
                 {/* GitHub */}
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/csivitu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors duration-300"
@@ -781,7 +781,7 @@ export default function App() {
 
                 {/* X (Twitter) */}
                 <motion.a
-                  href="https://twitter.com"
+                  href="https://x.com/csivitu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors duration-300"
