@@ -6,6 +6,8 @@ import SystemBroadcast from '../components/SystemBroacast';
 import Timeline from '../components/Timeline';
 import JudgingCriteria from '../components/JudgingCriteria';
 import GlitchFund from '../components/GlitchFund';
+import FuzzyText from '../components/FuzzyText';
+import CustomCursor from '../components/CustomCursor';
 
 export default function CaSScade() {
   const { scrollYProgress } = useScroll();
@@ -13,6 +15,9 @@ export default function CaSScade() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
       {/* Animated Grid Background */}
       <motion.div 
         style={{ opacity: backgroundOpacity }}
@@ -31,23 +36,23 @@ export default function CaSScade() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-center mb-12"
           >
-            <motion.h1 
-              className="text-6xl md:text-8xl font-mono font-black mb-6 glitch-text"
-              style={{ 
-                textShadow: '0 0 20px #0076C0, 0 0 40px #0076C0, 0 0 60px #0076C0',
-                fontFamily: 'Space Grotesk, monospace'
-              }}
-              animate={{
-                textShadow: [
-                  '0 0 20px #0076C0, 0 0 40px #0076C0, 0 0 60px #0076C0',
-                  '0 0 25px #EA4B21, 0 0 45px #EA4B21, 0 0 65px #EA4B21',
-                  '0 0 20px #0076C0, 0 0 40px #0076C0, 0 0 60px #0076C0'
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            <motion.div 
+              className="mb-6 text-center"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
             >
-              CaSScade'25
-            </motion.h1>
+              <FuzzyText
+                fontSize="clamp(3rem, 8vw, 8rem)"
+                fontWeight={950}
+                fontFamily="Space Grotesk, monospace"
+                color="#EA4B21"
+                baseIntensity={0.15}
+                hoverIntensity={0.4}
+              >
+                CaSScade'25
+              </FuzzyText>
+            </motion.div>
             
             {/* Tagline */}
             <motion.h2 
@@ -80,16 +85,16 @@ export default function CaSScade() {
           </motion.div>
 
           {/* System Status - Moved closer to SystemBroadcast */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="text-xl md:text-2xl font-mono text-blue-400 mb-6 text-center"
-            style={{
-              textShadow: '0 0 10px #0076C0'
-            }}
-          >
-            [SYSTEM_STATUS: COMPETITION_ACTIVE]
+              style={{
+                textShadow: '0 0 10px #0076C0'
+              }}
+            >
+              [SYSTEM_STATUS: COMPETITION_ACTIVE]
           </motion.div>
 
           <SystemBroadcast />
@@ -623,27 +628,27 @@ export default function CaSScade() {
           <div className="max-w-6xl mx-auto">
             {/* Main Footer Content */}
             <div className="text-center mb-12">
-              <motion.div 
+            <motion.div 
                 className="font-space-grotesk text-lg text-gray-400 mb-6"
-                animate={{
-                  textShadow: [
-                    '0 0 5px rgba(255, 255, 255, 0.2)',
-                    '0 0 10px rgba(0, 118, 192, 0.3)',
-                    '0 0 5px rgba(255, 255, 255, 0.2)'
-                  ]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                [END_TRANSMISSION]
-              </motion.div>
-              <motion.p 
+              animate={{
+                textShadow: [
+                  '0 0 5px rgba(255, 255, 255, 0.2)',
+                  '0 0 10px rgba(0, 118, 192, 0.3)',
+                  '0 0 5px rgba(255, 255, 255, 0.2)'
+                ]
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              [END_TRANSMISSION]
+            </motion.div>
+            <motion.p 
                 className="text-blue-400 text-xl font-space-grotesk mb-8"
-                style={{
-                  textShadow: '0 0 10px #0076C0'
-                }}
-              >
-                May the cascade be with you.
-              </motion.p>
+              style={{
+                textShadow: '0 0 10px #0076C0'
+              }}
+            >
+              May the cascade be with you.
+            </motion.p>
               
               {/* Social Media Links */}
               <motion.div 
