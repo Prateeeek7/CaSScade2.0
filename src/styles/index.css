@@ -7,6 +7,24 @@
   box-sizing: border-box;
 }
 
+/* FuzzyText canvas styling to prevent clipping */
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Page separation and smooth scrolling */
+section {
+  scroll-margin-top: 2rem;
+}
+
+/* Ensure proper page spacing */
+.min-h-screen {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
 /* GPU acceleration for animations */
 .animate-gpu {
   transform: translateZ(0);

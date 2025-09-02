@@ -57,9 +57,9 @@ export default function SystemBroadcast() {
       className="max-w-4xl mx-auto"
       style={{ willChange: 'opacity' }}
     >
-      <div className="border border-blue-500 p-4 sm:p-6 md:p-8 rounded-lg bg-black/70 backdrop-blur-sm">
+      <div className="border border-blue-500 p-3 sm:p-4 md:p-5 rounded-lg bg-black/70 backdrop-blur-sm">
         <div 
-          className="font-mono text-xs sm:text-sm md:text-base space-y-2"
+          className="font-mono text-xs sm:text-xs md:text-sm space-y-1"
           style={{ 
             textShadow: '0 0 10px rgba(0, 118, 192, 0.5)',
             filter: isGlitching ? 'hue-rotate(180deg) contrast(2)' : 'none'

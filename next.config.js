@@ -3,6 +3,9 @@ const nextConfig = {
   // Enable React strict mode for better development
   reactStrictMode: true,
   
+  // Set pages directory to src/pages
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  
   // Image optimization
   images: {
     domains: [],

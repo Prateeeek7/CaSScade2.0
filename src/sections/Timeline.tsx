@@ -71,18 +71,25 @@ export default function Timeline() {
             <motion.path
               d="M2 0 L2 1000"
               stroke="url(#gradient)"
-              strokeWidth="2"
+              strokeWidth="3"
               fill="none"
-              style={{ pathLength }}
               initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
+              animate={{ 
+                pathLength: 1,
+                strokeOpacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                pathLength: { duration: 3, ease: "easeInOut" },
+                strokeOpacity: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+              }}
             />
             <defs>
               <linearGradient id="gradient" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0076C0" />
-                <stop offset="50%" stopColor="#EA4B21" />
-                <stop offset="100%" stopColor="#10B981" />
+                <stop offset="0%" stopColor="#EA4B21" />
+                <stop offset="25%" stopColor="#0076C0" />
+                <stop offset="50%" stopColor="#8B5CF6" />
+                <stop offset="75%" stopColor="#10B981" />
+                <stop offset="100%" stopColor="#F59E0B" />
               </linearGradient>
             </defs>
           </svg>

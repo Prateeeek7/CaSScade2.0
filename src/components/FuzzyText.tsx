@@ -80,11 +80,13 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       const textBoundingWidth = Math.ceil(actualLeft + actualRight);
       const tightHeight = Math.ceil(actualAscent + actualDescent);
 
-      const extraWidthBuffer = 10;
+      const extraWidthBuffer = 50; // Increased from 10 to 50 for more width buffer
+      const extraHeightBuffer = 20; // Added height buffer
       const offscreenWidth = textBoundingWidth + extraWidthBuffer;
+      const offscreenHeight = tightHeight + extraHeightBuffer;
 
       offscreen.width = offscreenWidth;
-      offscreen.height = tightHeight;
+      offscreen.height = offscreenHeight;
 
       const xOffset = extraWidthBuffer / 2;
       offCtx.font = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
@@ -115,27 +117,30 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
         currentX += charMetrics.width;
       }
 
-      const horizontalMargin = 50;
-      const verticalMargin = 0;
-      canvas.width = offscreenWidth + horizontalMargin * 2;
-      canvas.height = tightHeight + verticalMargin * 2;
-      ctx.translate(horizontalMargin, verticalMargin);
+      const horizontalMargin = 100; // Increased from 50 to 100 for more right/left space
+      const verticalMargin = 80; // Increased from 40 to 80 for more top/bottom space
+      const fuzzRange = 50; // Increased from 30 to 50 for more fuzzy effect space
+      // Ensure canvas is large enough for fuzzy effect and text margins on ALL sides
+      const totalWidth = offscreenWidth + horizontalMargin * 2 + fuzzRange * 2;
+      const totalHeight = offscreenHeight + verticalMargin * 2 + fuzzRange * 2;
+      canvas.width = totalWidth;
+      canvas.height = totalHeight;
+      ctx.translate(horizontalMargin + fuzzRange, verticalMargin + fuzzRange + actualAscent);
 
-      const interactiveLeft = horizontalMargin + xOffset;
-      const interactiveTop = verticalMargin;
+      const interactiveLeft = horizontalMargin + fuzzRange + xOffset;
+      const interactiveTop = verticalMargin + fuzzRange + actualAscent;
       const interactiveRight = interactiveLeft + textBoundingWidth;
       const interactiveBottom = interactiveTop + tightHeight;
 
       let isHovering = false;
-      const fuzzRange = 30;
 
       const run = () => {
         if (isCancelled) return;
         ctx.clearRect(
-          -fuzzRange,
-          -fuzzRange,
-          offscreenWidth + 2 * fuzzRange,
-          tightHeight + 2 * fuzzRange
+          0,
+          0,
+          totalWidth,
+          totalHeight
         );
         const intensity = isHovering ? hoverIntensity : baseIntensity;
         for (let j = 0; j < tightHeight; j++) {

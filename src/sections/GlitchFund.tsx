@@ -264,69 +264,7 @@ export default function GlitchFund(): JSX.Element {
           ))}
         </div>
 
-        {/* Additional Info */}
-        <motion.div
-          className="text-center p-8 border border-cyan-500/50 rounded-2xl bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 backdrop-blur-sm"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
-          <motion.div
-            className="text-xs font-mono text-cyan-400 mb-3 tracking-widest"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            [BONUS_REWARDS: UNLOCKED]
-          </motion.div>
-          
-          <motion.h3 
-            className="title-heading text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-          >
-            Special Recognition
-          </motion.h3>
-          
-          <motion.p 
-            className="text-lg text-cyan-300 mb-8 font-mono"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 1.0 }}
-          >
-            All participants receive certificates and exclusive networking opportunities
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4 text-sm"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-          >
-            {[
-              { text: "Mentorship Access", color: "#00FFFF" },
-              { text: "Industry Connections", color: "#0080FF" },
-              { text: "Future Opportunities", color: "#8000FF" }
-            ].map((item, idx) => (
-              <motion.span
-                key={idx}
-                className="px-4 py-2 border rounded-full font-mono font-medium backdrop-blur-sm"
-                style={{
-                  borderColor: `${item.color}50`,
-                  color: item.color,
-                  backgroundColor: `${item.color}10`
-                }}
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + (idx * 0.1) }}
-              >
-                {item.text}
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
+
       </div>
     </section>
   );
