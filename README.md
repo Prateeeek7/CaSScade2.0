@@ -191,7 +191,7 @@ This project is proprietary and created for the CaSScade'25 hackathon event orga
 
 <div align="center">
 
-**"WE BUILD, IT MATTERS."** - CSI VIT
+**"WHEN WE BUILD, IT MATTERS."** - CSI VIT
 
 *Ready to dive into the chaos? Enter the CaSScade...* 🚀✨
 
