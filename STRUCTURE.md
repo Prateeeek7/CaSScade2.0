@@ -9,7 +9,7 @@ src/
 ├── pages/                # Next.js pages (routing)
 │   ├── _app.tsx         # App wrapper
 │   ├── _document.tsx    # Document wrapper
-│   └── index.tsx        # Home page route
+│   └── index.js         # Home page route
 ├── sections/             # Page section components
 │   ├── HeroSection.tsx
 │   ├── AboutSection.tsx
@@ -28,13 +28,11 @@ src/
 │   ├── GridBackground.tsx
 │   ├── SystemBroadcast.tsx
 │   └── index.ts         # Component exports
-├── helpers/              # Utilities and core logic
+├── helpers/              # Essential utilities and data
 │   ├── constants/        # Application constants
 │   │   └── index.ts
 │   ├── types/           # TypeScript types
 │   │   └── index.ts
-│   ├── animations.ts    # Animation utilities
-│   ├── helpers.ts       # Helper functions
 │   └── index.ts         # Helpers exports
 └── styles/              # Global styles
     └── index.css
@@ -46,19 +44,19 @@ src/
 - **`pages/`**: Contains Next.js routes only
 - **`components/`**: Reusable UI components only
 - **`sections/`**: Page-specific layout components
-- **`helpers/`**: Utilities, constants, and types
+- **`helpers/`**: Essential constants and types only
 - **`styles/`**: Global CSS
 
 ### 2. **Proper Separation of Concerns**
 - **Routing**: Handled by Next.js pages
 - **Page Sections**: Layout components specific to pages (in sections folder)
 - **Reusable Components**: UI components used across multiple places
-- **Logic**: Utilities and business logic in helpers
-- **Data**: Constants and types centralized
+- **Data**: Constants and types centralized in helpers
+- **Logic**: Clean, focused structure
 
 ### 3. **Clean Import System**
 - Single import from `src/components` for all components
-- Single import from `src/helpers` for all utilities
+- Single import from `src/helpers` for essential data
 - Organized barrel exports
 - No circular dependencies
 
@@ -94,6 +92,7 @@ src/
 4. **Scalability**: Easy to add new pages or components
 5. **Performance**: Better code splitting and lazy loading
 6. **Collaboration**: Multiple developers can work on different areas
+7. **Clean Code**: No unused utilities or functions
 
 ## 🚀 Usage Examples
 
@@ -108,18 +107,18 @@ import {
 } from '../components';
 ```
 
-### **Importing Utilities**
+### **Importing Essential Data**
 ```typescript
-// Single import for all utilities
-import { EVENT_INFO, fadeInUp, debounce } from '../helpers';
+// Single import for essential data
+import { EVENT_INFO, SOCIAL_LINKS } from '../helpers';
 ```
 
 ### **Page Structure**
 ```typescript
-// pages/index.tsx - Only routing logic
+// pages/index.js - Only routing logic
 import { CaSScade } from '../sections';
 
-const Home: NextPage = () => {
+export default function HomePage() {
   return <CaSScade />;
 };
 ```
@@ -131,6 +130,7 @@ const Home: NextPage = () => {
 - **Proper structure**: Follows Next.js best practices
 - **Clean imports**: Organized, maintainable imports
 - **No duplicate code**: Clean, organized structure
+- **Optimized helpers**: Only essential constants and types
 
 ## 📝 Future Enhancements
 
@@ -152,10 +152,11 @@ const Home: NextPage = () => {
 - ✅ **Implemented fundamental Next.js structure**
 - ✅ **Proper separation of pages vs. reusable components vs. page sections**
 - ✅ **Organized page sections in sections folder**
-- ✅ **Moved utilities to helpers folder**
+- ✅ **Optimized helpers folder - only essential constants and types**
 - ✅ **Fixed all import paths**
-- ✅ **Build successful! 🎉**
+- ✅ **Build successful with 3 pages! 🎉**
+- ✅ **Cleaned up unused files (helpers.ts, animations.ts)**
 
 ---
 
-This structure makes the codebase more professional, maintainable, and follows Next.js best practices while preserving all existing functionality and design. The codebase is now clean, organized, and ready for production use.
+This structure makes the codebase more professional, maintainable, and follows Next.js best practices while preserving all existing functionality and design. The codebase is now clean, organized, optimized, and ready for production use.
