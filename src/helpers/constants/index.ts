@@ -20,7 +20,7 @@ export const SOCIAL_LINKS = {
 // CSI Information
 export const CSI_INFO = {
   name: "CSI VIT",
-  tagline: "WE BUILD, IT MATTERS.",
+  tagline: "WHEN WE BUILD, IT MATTERS.",
   description: "CSI VIT is a vibrant community of makers, breakers and innovators. We bring together developers, designers and problem solvers to explore cutting edge technology through hackathons, workshops and real world projects.",
   events: ["Laser Tag", "Fork This", "DevSpace", "Riddler", "ByteBistro", "Init with CSI"]
 } as const;
