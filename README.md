@@ -116,7 +116,7 @@ The website is fully responsive with mobile-first design:
 
 ## 🔗 Important Links
 
-- **Event Registration**: [WWW.EventLinkDedoBhaiyaJi.com](https://WWW.EventLinkDedoBhaiyaJi.com)
+- **Event Registration**: [EventLinkDedoplease.com](https://EventLinkDedoplease.com)
 - **CSI Main Website**: [https://www.csi-india.org](https://www.csi-india.org)
 
 ## 📁 Project Structure

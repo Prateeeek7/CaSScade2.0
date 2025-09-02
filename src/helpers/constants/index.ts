@@ -3,7 +3,7 @@ export const EVENT_INFO = {
   name: "CaSScade'25",
   tagline: "DIVS GONE WILD",
   description: "A design-first chaos experiment where HTML, CSS, and JS collide in the most absurd, over-engineered ways possible.",
-  registrationUrl: "https://WWW.EventLinkDedoBhaiyaJi.com",
+  registrationUrl: "https://EventLinkDedoplease.com",
   csiWebsite: "https://csivit.com/",
   csiIndia: "https://www.csi-india.org"
 } as const;
