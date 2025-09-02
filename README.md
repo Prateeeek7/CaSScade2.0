@@ -122,31 +122,39 @@ The website is fully responsive with mobile-first design:
 ## 📁 Project Structure
 
 ```
-CaSScade-25/
-├── src/
-│   ├── App.tsx              # Main application component
-│   ├── main.tsx             # Application entry point
-│   ├── components/          # Reusable UI components
-│   │   ├── GridBackground.jsx    # Animated grid background
-│   │   ├── SystemBroacast.jsx    # Typewriter system messages
-│   │   ├── Timeline.jsx          # Event timeline
-│   │   ├── JudgingCriteria.jsx   # Judging criteria cards
-│   │   └── GlitchFund.jsx        # Prize pool display
-│   ├── pages/               # Page components
-│   │   └── CaSScade.jsx     # Original page structure
-│   ├── styles/              # Global styles and animations
-│   │   └── index.css        # Main CSS file with Tailwind and custom animations
-│   ├── assets/              # Static assets (images, icons, etc.)
-│   ├── utils/               # Utility functions and helpers
-│   └── types/               # TypeScript type definitions
-├── public/
-│   ├── index.html           # Main HTML file
-│   ├── images/              # Image assets
-│   │   └── CSI Logo.svg     # CSI chapter logo
-│   └── icons/               # Icon assets
-├── dist/                    # Production build output
-└── package.json             # Project dependencies and scripts
+src/
+├── pages/                # Next.js pages (routing)
+│   ├── _app.tsx         # App wrapper
+│   ├── _document.tsx    # Document wrapper
+│   └── index.js         # Home page route
+├── sections/             # Page section components
+│   ├── HeroSection.tsx
+│   ├── AboutSection.tsx
+│   ├── EventRulesSection.tsx
+│   ├── CSISection.tsx
+│   ├── SocialMediaSection.tsx
+│   ├── Footer.tsx
+│   ├── Timeline.tsx
+│   ├── JudgingCriteria.tsx
+│   ├── GlitchFund.tsx
+│   ├── CaSScade.tsx
+│   └── index.ts         # Page section exports
+├── components/           # React components
+│   ├── CustomCursor.tsx
+│   ├── FuzzyText.tsx
+│   ├── GridBackground.tsx
+│   ├── SystemBroadcast.tsx
+│   └── index.ts         # Component exports
+├── helpers/              # Essential utilities and data
+│   ├── constants/        # Application constants
+│   │   └── index.ts
+│   ├── types/           # TypeScript types
+│   │   └── index.ts
+│   └── index.ts         # Helpers exports
+└── styles/              # Global styles
+    └── index.css
 ```
+
 
 ## 🎭 Customization
 
